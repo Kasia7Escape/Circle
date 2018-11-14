@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //palindrom (tez można zrobic jak w drugim zadaniu)
 
-public class StringZad3 {
+public class Palindrom {
 
     public static boolean isPalindrome(String text) {
         boolean result = false;
