@@ -2,28 +2,30 @@ package zadaniaString;
 
 import java.util.Scanner;
 
-//palindrom (tez można zrobic jak w drugim zadaniu)
-
 public class Palindrom {
 
-    public static boolean isPalindrome(String text) {
-        boolean result = false;
-        for (int i = 0; i < text.length() / 2; i++) {
-            if (text.charAt(i) != text.charAt(text.length() - i)) {
-                return false;    //lub napisać result, potem break i wtedy przy boolean result wstawić true
+    public static boolean isPalindrome(String textToRevert) {
+
+        //boolean result = true;
+        StringBuilder builder = new StringBuilder();
+        for (int i = textToRevert.length() - 1; i >= 0; i--) {
+            builder.append(textToRevert.charAt(i));//buduje w pamieci wynikowy zapis - od tyłu
+            if (builder.toString().equals(textToRevert)) {
+                System.out.println("to jest palindrom");
+                return true;
             }
         }
-        return true;
+        System.out.println("to  nie jest palindrom");
+        return false;
     }
 
-
     public static void main(String[] args) {
-      /*  String napis;
-        System.out.println("Napisz dowolny wyraz:");
+
+        System.out.println("Podaj dowolny wyraz:");
         Scanner scanner = new Scanner(System.in);
-        napis = scanner.nextLine();
-        System.out.println(isPalindrome(napis)); */
-        System.out.println(isPalindrome("anna"));
+        String wyraz = scanner.nextLine();
+
+        isPalindrome(wyraz);
 
     }
 }
